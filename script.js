@@ -7,7 +7,9 @@ var clicked = null;
 var lose = null;
 var mistakeCounter = {totalMistakes : 0,temporaryMistakes : 0};
 var userGuesses = {}
+var hint = $('.hint');
 getWord();
+getHint();
 for(var i=0;i<=buttons.length;i++){
     buttons.eq(i).click(function(){
         clicked = this.textContent;
@@ -86,12 +88,15 @@ function userView(word){
     }
     return letterLength;
 }
-
+function getHint() {
+    
+}
 async function getWord(){
     await fetch(wordUrl)
         .then(res => res.json())
         .then(function (data){
             userGuesses.answer = data[0].word.toUpperCase();
+            hint.text(`Definition : ${data[0].definition}`);
             userGuess();
         })
         .catch(error => console.log('error'))
