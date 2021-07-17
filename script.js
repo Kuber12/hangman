@@ -1,19 +1,13 @@
 const wordUrl = 'https://random-words-api.vercel.app/word';
-var something = ''
+var hangmanClasses = ['','.man-head','.man-body','.man-left-hand','.man-right-hand','.man-left-leg','.man-right-leg']
 words = ['boredom'];
-var userGuesses = {}
-getWord();
-userGuesses.answer = something;
-userGuesses.userSees = userView(userGuesses.answer);
-userGuesses.splittedAnswer = userGuesses.answer.split('');
-userGuesses.splittedUserSees = userGuesses.userSees.split('');
 var buttons = $('.alpha');
 var letter = $('.letters');
 var clicked = null;
-var mistakeCounter = {totalMistakes : 0,temporaryMistakes : 0};
-var hangmanClasses = ['','.man-head','.man-body','.man-left-hand','.man-right-hand','.man-left-leg','.man-right-leg']
 var lose = null;
-refreshLetters();
+var mistakeCounter = {totalMistakes : 0,temporaryMistakes : 0};
+var userGuesses = {}
+getWord();
 for(var i=0;i<=buttons.length;i++){
     buttons.eq(i).click(function(){
         clicked = this.textContent;
@@ -21,6 +15,12 @@ for(var i=0;i<=buttons.length;i++){
         console.log(clicked);
         guessed();
     });
+}
+function userGuess(){
+    userGuesses.userSees = userView(userGuesses.answer);
+    userGuesses.splittedAnswer = userGuesses.answer.split('');
+    userGuesses.splittedUserSees = userGuesses.userSees.split('');
+    refreshLetters();
 }
 function mistakeCounting(action){
     if(action == 'adding'){
@@ -88,10 +88,11 @@ function userView(word){
 }
 
 async function getWord(){
-    fetch(wordUrl)
+    await fetch(wordUrl)
         .then(res => res.json())
         .then(function (data){
-            something = data[0].word;
+            userGuesses.answer = data[0].word.toUpperCase();
+            userGuess();
         })
         .catch(error => console.log('error'))
 }
