@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body>
+    <div id="main-game">
+        <div class="game-area">
+            <div class="container">
+                <div class="row">
+                  <div class="col-10">
+                    <div class="letters">
+                        _
+                    </div>
+                    <div class="hint">
+                      Hint
+                    </div>
+
+                    <div class="keys">
+                      <div class="a-to-m">
+                        <button class="alpha">A</button>
+                        <button class="alpha">B</button>
+                        <button class="alpha">C</button>
+                        <button class="alpha">D</button>
+                        <button class="alpha">E</button>
+                        <button class="alpha">F</button>
+                        <button class="alpha">G</button>
+                        <button class="alpha">H</button>
+                        <button class="alpha">I</button>
+                        <button class="alpha">J</button>
+                        <button class="alpha">K</button>
+                        <button class="alpha">L</button>
+                        <button class="alpha">M</button>
+                      </div>
+                      <div class="n-to-z">
+                        <button class="alpha">N</button>
+                        <button class="alpha">O</button>
+                        <button class="alpha">P</button>
+                        <button class="alpha">Q</button>
+                        <button class="alpha">R</button>
+                        <button class="alpha">S</button>
+                        <button class="alpha">T</button>
+                        <button class="alpha">U</button>
+                        <button class="alpha">V</button>
+                        <button class="alpha">W</button>
+                        <button class="alpha">X</button>
+                        <button class="alpha">Y</button>
+                        <button class="alpha">Z</button>
+                      </div>
+                    </div>
+                    <div class="restart"><button class="restart-button">Restart</button></div>
+                  </div>
+                  <div class="col-2 hangman">
+                    <div class="gallow">
+                      <div class="rope"></div>
+                      <div class="everything-else"></div>
+                    </div>
+                    <div class="man-head"></div>
+                    <div class="man-left-hand"></div>
+                    <div class="man-right-hand"></div>
+                    <div class="man-body"></div>
+                    <div class="legs">
+                      <div class="man-left-leg"></div>
+                      <div class="man-right-leg"></div>
+                    </div>
+                    <div class="floor"></div>
+                  </div>
+                </div>
+              </div>
+              
+        </div>
+        
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
+<script src="script.js"></script>
+</html>

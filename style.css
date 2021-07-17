@@ -1,0 +1,167 @@
+body{
+    background-color:#e5e5e5 !important;
+}
+.letters{
+    font-size: 70px;
+    text-align: center;
+    margin: 5px 0px !important;
+    padding: 0px 5px !important;
+    letter-spacing: 8px;
+}
+.hint{
+    text-align: center;
+    height: 70px;
+    padding-top: 20px;
+}
+.words{
+    background-color: violet;
+}
+#main-game{
+    flex-direction: row;
+}
+.game-area{
+    margin-top: 50px;
+    height: 100%;
+}
+.restart{
+    text-align: center;
+    margin-top: 50px;
+}
+.restart-button{
+    height: 50px;
+    width: 200px;
+    border-radius: 50px;
+    background-color:rgba(0, 0, 255, 0.63);
+    border:2px purple solid;
+    color:white;
+}
+.alpha{
+    width: 50px;
+    height: 50px;
+    background-color: violet;
+    color:white;
+    font-size: 24px !important;
+    border-radius: 20px !important;
+    border: 2px solid purple;
+}
+.disabled{
+    background-color: rgba(238, 130, 238, 0.548);
+    border:2px solid rgba(128, 0, 128, 0.63);
+    color:violet;
+}
+.visible{
+    background-color:blue;
+}
+.correct{
+    background-color: rgba(0, 0, 0, 0.548);
+    border:2px solid rgba(0, 0, 0, 0.63);
+    color:rgb(0, 0, 0);
+}
+.keys{
+    text-align: center;
+}
+.a-to-m{
+    margin-bottom: 4px;
+}
+.hangman{
+    text-align: center;
+    margin-top: 50px !important;
+}
+.man-body ,.man-left-hand ,.man-right-hand, .man-head ,.man-right-leg{
+    transition: 500ms ease-in;
+}
+.man-head{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    border: 3.5px solid transparent;
+    margin:auto;
+    margin-top: 27px;
+}
+.man-body ,.man-left-hand ,.man-right-hand{
+    display: inline-block;
+    height: 80px;
+    width: 3px;
+    background-color: transparent;
+}
+.man-left-hand, .man-left-leg{
+    position: fixed;
+    transform: rotate(45deg);
+    margin-left: -27px;
+}
+.man-right-hand, .man-left-hand{
+    margin-top:-13px;
+}
+.man-right-hand, .man-right-leg{
+    position: fixed;
+    transform: rotate(315deg);
+    margin-left: 27px;
+}
+.man-left-leg, .man-right-leg{
+    position: fixed;
+    display: inline-block;
+    background-color: transparent;
+    height: 80px;
+    width: 3px;
+}
+.legs{
+    margin-top: -20px;
+    margin-left:-3px;
+}
+.gallow{
+    position:fixed;
+    border:5px;
+    margin-left: 80px;
+}
+.floor{
+    position: fixed;
+    width: 225px;
+    height: 50px;
+    border:2px black solid ;
+    margin-top: 100px;
+    background-color: white;
+}
+.rope{
+    position: fixed;
+    width: 3px;
+    height: 30px;
+    background-color:black;
+}
+.everything-else{
+    position: fixed;
+    border-right: black solid 3px;
+    border-top: black solid 3px;
+    width: 125px;
+    height: 275px;
+}
+/*
+.man-left-hand{
+    position: fixed;
+    transform: rotate(45deg);
+    margin-left: -28px;
+    margin-top: -10px;
+}
+.man-right-hand{
+    position: fixed;
+    transform: rotate(315deg);
+    margin-left: 28px;
+    margin-top: -10px;
+}
+.man-left-leg, .man-right-leg{
+    position: fixed;
+    transform: rotate(45deg);
+    background-color: black;
+    height: 80px;
+    width: 3px;
+    margin-top: -18px;
+    margin-left: 110px;
+}
+.man-left-leg{
+    transform: rotate(45deg);
+    margin-left: 56px;
+}
+.man-right-leg{
+    transform: rotate(315deg);
+    margin-right: 55px;
+}
+*/
