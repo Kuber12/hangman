@@ -65,7 +65,11 @@ body{
 }
 .hangman{
     text-align: center;
-    margin-top: 50px !important;
+    padding-left: 20px;
+    /* margin-top: 50px !important; */
+    /* margin: auto !important; */
+    margin: auto 0;
+    width: 50%;
 }
 .man-body ,.man-left-hand ,.man-right-hand, .man-head ,.man-right-leg{
     transition: 500ms ease-in;
@@ -131,37 +135,20 @@ body{
     position: fixed;
     border-right: black solid 3px;
     border-top: black solid 3px;
-    width: 125px;
+    width: 100px;
     height: 275px;
 }
-/*
-.man-left-hand{
-    position: fixed;
-    transform: rotate(45deg);
-    margin-left: -28px;
-    margin-top: -10px;
+@media only screen and (max-width: 600px) {
+    .row{
+        flex-direction: column-reverse;
+    }
+    .hangman{
+        margin-left: 20% !important;
+        margin-bottom: 225px;
+        display: inline-block !important;
+        height: 10px!important;
+    }
+    .col-10{
+        width: 100% !important;
+    }
 }
-.man-right-hand{
-    position: fixed;
-    transform: rotate(315deg);
-    margin-left: 28px;
-    margin-top: -10px;
-}
-.man-left-leg, .man-right-leg{
-    position: fixed;
-    transform: rotate(45deg);
-    background-color: black;
-    height: 80px;
-    width: 3px;
-    margin-top: -18px;
-    margin-left: 110px;
-}
-.man-left-leg{
-    transform: rotate(45deg);
-    margin-left: 56px;
-}
-.man-right-leg{
-    transform: rotate(315deg);
-    margin-right: 55px;
-}
-*/

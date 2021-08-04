@@ -1,15 +1,17 @@
 const wordUrl = 'https://random-words-api.vercel.app/word';
 var hangmanClasses = ['','.man-head','.man-body','.man-left-hand','.man-right-hand','.man-left-leg','.man-right-leg']
-words = ['boredom'];
 var buttons = $('.alpha');
 var letter = $('.letters');
+var hint = $('.hint');
+var restart = $('.restart-button');
 var clicked = null;
 var lose = null;
 var mistakeCounter = {totalMistakes : 0,temporaryMistakes : 0};
 var userGuesses = {}
-var hint = $('.hint');
+restart.click(function(){
+    defaultValues();
+})
 getWord();
-getHint();
 for(var i=0;i<=buttons.length;i++){
     buttons.eq(i).click(function(){
         clicked = this.textContent;
@@ -17,6 +19,14 @@ for(var i=0;i<=buttons.length;i++){
         console.log(clicked);
         guessed();
     });
+}
+function defaultValues(){
+    clicked = null;
+    lose = null;
+    mistakeCounter = {totalMistakes : 0,temporaryMistakes : 0};
+    getWord();
+    $(buttons).removeClass('disabled').prop('disabled',false);
+    addHangmanClass("remove")
 }
 function userGuess(){
     userGuesses.userSees = userView(userGuesses.answer);
@@ -50,18 +60,24 @@ function checkWord(){
     }
 }
 function addingClass(classAdded){
-    $(classAdded).addClass('disabled');
+    $(classAdded).addClass('disabled').attr('disabled','disabled');;
 }
 function refreshLetters(){
     $(letter).text(userGuesses.userSees);
     checkWord();
 }
-function addHangmanClass(){
+function addHangmanClass(remove){
     for(var i = 0; i<=mistakeCounter.totalMistakes;i++){
         if(i == 1){
             $(hangmanClasses[i]).css('border-color','black'); 
         }else{
             $(hangmanClasses[i]).css('background-color','black');
+        }
+    }
+    if(remove == "remove"){
+        for(var i = 0;i<= hangmanClasses.length;i++){
+            $(hangmanClasses[i]).css('border-color','transparent'); 
+            $(hangmanClasses[i]).css('background-color','transparent');
         }
     }
 }
@@ -87,9 +103,6 @@ function userView(word){
         letterLength = letterLength + '_';
     }
     return letterLength;
-}
-function getHint() {
-    
 }
 async function getWord(){
     await fetch(wordUrl)
