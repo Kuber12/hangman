@@ -1,3 +1,4 @@
+let words = ["apple", "banana" , "mango"];
 const wordUrl = 'https://random-words-api.vercel.app/word';
 var hangmanClasses = ['','.man-head','.man-body','.man-left-hand','.man-right-hand','.man-left-leg','.man-right-leg']
 var buttons = $('.alpha');
@@ -11,7 +12,9 @@ var userGuesses = {}
 restart.click(function(){
     defaultValues();
 })
-getWord();
+userGuesses.answer = words[Math.floor(Math.random() * words.length)].toUpperCase();
+userGuess();
+// getWord();
 for(var i=0;i<=buttons.length;i++){
     buttons.eq(i).click(function(){
         clicked = this.textContent;
@@ -24,7 +27,7 @@ function defaultValues(){
     clicked = null;
     lose = null;
     mistakeCounter = {totalMistakes : 0,temporaryMistakes : 0};
-    getWord();
+
     $(buttons).removeClass('disabled').prop('disabled',false);
     addHangmanClass("remove")
 }
@@ -104,13 +107,13 @@ function userView(word){
     }
     return letterLength;
 }
-async function getWord(){
-    await fetch(wordUrl)
-        .then(res => res.json())
-        .then(function (data){
-            userGuesses.answer = data[0].word.toUpperCase();
-            hint.text(`Definition : ${data[0].definition}`);
-            userGuess();
-        })
-        .catch(error => console.log('error'))
-}
+// async function getWord(){
+//     await fetch(wordUrl)
+//         .then(res => res.json())
+//         .then(function (data){
+//             userGuesses.answer = data[0].word.toUpperCase();
+//             hint.text(`Definition : ${data[0].definition}`);
+//             userGuess();
+//         })
+//         .catch(error => console.log('error'))
+// }
