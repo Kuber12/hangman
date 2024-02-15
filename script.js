@@ -1,4 +1,16 @@
-let words = ["apple", "banana" , "mango"];
+let words = [
+  "cat", "dog", "house", "car", "tree", "computer", "river", "mountain", "book", 
+  "ocean", "city", "flower", "coffee", "phone", "friend", "music", "sky", "sun", 
+  "moon", "cloud", "shoe", "chair", "table", "key", "door", "window", "ship", "bird", 
+  "star", "guitar", "painting", "camera", "garden", "bicycle", "bridge", "fish", 
+  "apple", "pencil", "lamp", "clock", "mirror", "globe", "bag", "hat", "shirt", 
+  "river", "lake", "ball", "sunflower", "butterfly", "turtle", "cloud", "kite", 
+  "beach", "island", "mountain", "letter", "map", "coin", "wallet", "camera", 
+  "microphone", "keyboard", "umbrella", "candle", "rain", "fire", "star", 
+  "planet", "moon", "earth", "stone", "paper", "sand", "snow", "rainbow", 
+  "ocean", "whale", "dolphin", "robot", "rocket", "train", "bus", "bicycle", 
+  "motorcycle", "building", "flower", "garden", "river", "bridge", "forest"
+];
 const wordUrl = 'https://random-words-api.vercel.app/word';
 var hangmanClasses = ['','.man-head','.man-body','.man-left-hand','.man-right-hand','.man-left-leg','.man-right-leg']
 var buttons = $('.alpha');
