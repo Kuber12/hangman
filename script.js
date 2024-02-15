@@ -22,7 +22,7 @@ var lose = null;
 var mistakeCounter = {totalMistakes : 0,temporaryMistakes : 0};
 var userGuesses = {}
 restart.click(function(){
-    defaultValues();
+    location.reload(true);
 })
 userGuesses.answer = words[Math.floor(Math.random() * words.length)].toUpperCase();
 userGuess();
